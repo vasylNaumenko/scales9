@@ -1,0 +1,157 @@
+@back_color: #393530;
+.no_select {
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Likely future */
+}
+
+body {
+  color: #f0ede6;
+  background: @back_color;
+  padding: 11px 0 0 24px;
+  font-family: Arial, serif;
+}
+
+header, footer {
+  clear: both;
+  margin-bottom: 15px;
+}
+
+.controls {
+  padding-top: 12px;
+  clear: both;
+}
+
+.headline {
+  position: relative;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  top: 11px;
+}
+
+.logo {
+  float: left;
+  background: url("../img/scales-big.png") no-repeat;
+  height: 80px;
+  width: 77px;
+  margin-right: 32px;
+}
+
+.button {
+  padding: 9px 27px;
+  background-color: #636363;
+  color: #f0ede6;
+  margin-right: 11px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid @back_color;
+  font-size: 14px;
+
+  &:hover {
+    border: 1px solid #a6a6a6;
+  }
+  &.selected {
+    background-color: #18860c;
+  }
+}
+
+.card {
+  float: left;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.41);
+  width: 100%;
+
+  .header {
+    background-color: #111;
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+    padding: 8px 12px;
+
+    .icon-scale {
+      position: relative;
+      float: left;
+      background: url("../img/scales-small.png") no-repeat;
+      height: 22px;
+      width: 20px;
+    }
+  }
+  .content {
+    padding: 0 8px 18px 8px;
+    .no_select;
+  }
+}
+
+.playzone-wrapper {
+  width: 382px;
+  position: relative;
+  float: left;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  .content {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.replays-wrapper {
+  position: relative;
+  float: left;
+  width: 382px;
+  margin-bottom: 7px;
+  .content {
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .replay{
+      padding-left: 24px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      &:hover{
+        background-color: #0c7304;
+      }
+      &.selected
+      {
+        background-color: #0c7304;
+      }
+    }
+    .button
+    {
+      margin-left: 14px;
+      opacity: .9;
+    }
+  }
+}
+
+.ball {
+  display: inline-block;
+  background: url("../img/sprites.png") 0 0 no-repeat;
+  height: 33px;
+  width: 33px;
+  text-align: center;
+  line-height: 33px;
+
+  &.red {
+    background-position: 0 -33px;
+  }
+}
+
+div[data-role=init] {
+  .ball {
+    cursor: pointer;
+    &.init {
+      &:hover {
+        background-position: 0 -66px;
+      }
+    }
+  }
+}
